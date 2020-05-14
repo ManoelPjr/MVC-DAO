@@ -1,0 +1,272 @@
+object frmCadastrarCliente: TfrmCadastrarCliente
+  Left = 315
+  Height = 436
+  Top = 157
+  Width = 612
+  Caption = 'Cadastrar Cliente'
+  ClientHeight = 436
+  ClientWidth = 612
+  KeyPreview = True
+  Position = poMainFormCenter
+  LCLVersion = '2.0.6.0'
+  object pnlRodape: TPanel
+    Left = 0
+    Height = 50
+    Top = 386
+    Width = 612
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 50
+    ClientWidth = 612
+    Color = 11391740
+    ParentColor = False
+    TabOrder = 0
+    object btnFechar: TButton
+      Left = 500
+      Height = 25
+      Top = 9
+      Width = 75
+      Caption = 'Fechar'
+      TabOrder = 0
+    end
+  end
+  object pgcPrincipal: TPageControl
+    Left = 0
+    Height = 386
+    Top = 0
+    Width = 612
+    ActivePage = tbDados
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 1
+    object tbPesq: TTabSheet
+      Caption = 'tbPesq'
+      ClientHeight = 355
+      ClientWidth = 608
+      object pnlFiltro: TPanel
+        Left = 0
+        Height = 62
+        Top = 0
+        Width = 608
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 62
+        ClientWidth = 608
+        Color = 11391740
+        ParentColor = False
+        TabOrder = 0
+        object btnPesquisar: TButton
+          Left = 509
+          Height = 25
+          Top = 25
+          Width = 75
+          Caption = 'Pesquisar'
+          TabOrder = 0
+        end
+        object edtPesq: TLabeledEdit
+          Left = 10
+          Height = 27
+          Top = 23
+          Width = 415
+          EditLabel.Height = 17
+          EditLabel.Width = 415
+          EditLabel.Caption = 'Digite para pesquisar'
+          EditLabel.ParentColor = False
+          TabOrder = 1
+          Text = 'edtPesq'
+        end
+      end
+      object pnlPesqBttns: TPanel
+        Left = 0
+        Height = 50
+        Top = 305
+        Width = 608
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 608
+        Color = 11391740
+        ParentColor = False
+        TabOrder = 1
+        object btnNovo: TButton
+          Left = 359
+          Height = 25
+          Top = 22
+          Width = 75
+          Caption = 'Novo'
+          TabOrder = 0
+        end
+        object btnDetalhar: TButton
+          Left = 441
+          Height = 25
+          Top = 25
+          Width = 75
+          Caption = 'Detalhar'
+          TabOrder = 1
+        end
+        object btnExcluir: TButton
+          Left = 524
+          Height = 25
+          Top = 27
+          Width = 75
+          Caption = 'Excluir'
+          TabOrder = 2
+        end
+      end
+      object StringGrid1: TStringGrid
+        Left = 0
+        Height = 243
+        Top = 62
+        Width = 608
+        Align = alClient
+        TabOrder = 2
+      end
+    end
+    object tbDados: TTabSheet
+      Caption = 'tbDados'
+      ClientHeight = 355
+      ClientWidth = 608
+      object pnlCadBtns: TPanel
+        Left = 0
+        Height = 50
+        Top = 305
+        Width = 608
+        Align = alBottom
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 608
+        Color = 11391740
+        ParentColor = False
+        TabOrder = 0
+        object btnListar: TButton
+          Left = 244
+          Height = 25
+          Top = 14
+          Width = 75
+          Caption = 'Listar'
+          TabOrder = 0
+        end
+        object btnAlterar: TButton
+          Left = 326
+          Height = 25
+          Top = 14
+          Width = 75
+          Caption = 'Alterar'
+          TabOrder = 1
+        end
+        object btnGravar: TButton
+          Left = 408
+          Height = 25
+          Top = 14
+          Width = 75
+          Caption = 'Gravar'
+          TabOrder = 2
+        end
+        object btnCancelar: TButton
+          Left = 495
+          Height = 25
+          Top = 14
+          Width = 75
+          Caption = 'Cancelar'
+          TabOrder = 3
+        end
+      end
+      object edtCodigo: TLabeledEdit
+        Left = 15
+        Height = 27
+        Top = 23
+        Width = 80
+        EditLabel.Height = 17
+        EditLabel.Width = 80
+        EditLabel.Caption = 'Código'
+        EditLabel.ParentColor = False
+        TabOrder = 1
+        Text = 'edtCodigo'
+      end
+      object edtNome: TLabeledEdit
+        Left = 17
+        Height = 27
+        Top = 73
+        Width = 280
+        EditLabel.Height = 17
+        EditLabel.Width = 280
+        EditLabel.Caption = 'Nome'
+        EditLabel.ParentColor = False
+        TabOrder = 2
+        Text = 'edtNome'
+      end
+      object edtRG: TLabeledEdit
+        Left = 303
+        Height = 27
+        Top = 72
+        Width = 138
+        EditLabel.Height = 17
+        EditLabel.Width = 138
+        EditLabel.Caption = 'RG'
+        EditLabel.ParentColor = False
+        TabOrder = 3
+        Text = 'edtRG'
+      end
+      object edtCPF: TLabeledEdit
+        Left = 450
+        Height = 27
+        Top = 73
+        Width = 142
+        EditLabel.Height = 17
+        EditLabel.Width = 142
+        EditLabel.Caption = 'CPF'
+        EditLabel.ParentColor = False
+        TabOrder = 4
+        Text = 'edtCPF'
+      end
+      object edtCodigoCidade: TLabeledEdit
+        Left = 17
+        Height = 27
+        Top = 128
+        Width = 80
+        EditLabel.Height = 17
+        EditLabel.Width = 80
+        EditLabel.Caption = 'Cód. Cidade'
+        EditLabel.ParentColor = False
+        TabOrder = 5
+        Text = 'edtCodigoCidade'
+      end
+      object edtCidade: TLabeledEdit
+        Left = 103
+        Height = 27
+        Top = 128
+        Width = 433
+        EditLabel.Height = 17
+        EditLabel.Width = 433
+        EditLabel.Caption = 'Cidade'
+        EditLabel.ParentColor = False
+        TabOrder = 6
+        Text = 'edtCidade'
+      end
+      object edtEstado: TLabeledEdit
+        Left = 544
+        Height = 27
+        Top = 128
+        Width = 48
+        EditLabel.Height = 17
+        EditLabel.Width = 48
+        EditLabel.Caption = 'Estado'
+        EditLabel.ParentColor = False
+        TabOrder = 7
+        Text = 'edtEstado'
+      end
+      object edtTelefone: TLabeledEdit
+        Left = 17
+        Height = 27
+        Top = 176
+        Width = 159
+        EditLabel.Height = 17
+        EditLabel.Width = 159
+        EditLabel.Caption = 'Telefone'
+        EditLabel.ParentColor = False
+        TabOrder = 8
+        Text = 'edtTelefone'
+      end
+    end
+  end
+end

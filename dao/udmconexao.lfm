@@ -1,0 +1,23 @@
+object DmConexao: TDmConexao
+  OldCreateOrder = False
+  Height = 229
+  HorizontalOffset = 323
+  VerticalOffset = 157
+  Width = 365
+  PPI = 96
+  object sqlConexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    HostName = 'localhost'
+    Port = 5432
+    Database = 'cadCliente'
+    User = 'postgres'
+    Password = 'docker'
+    Protocol = 'postgresql-9'
+    left = 72
+    top = 32
+  end
+end

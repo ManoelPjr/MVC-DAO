@@ -1,0 +1,241 @@
+object DmCliente: TDmCliente
+  OldCreateOrder = False
+  Height = 281
+  HorizontalOffset = 315
+  VerticalOffset = 157
+  Width = 178
+  PPI = 96
+  object sqlPesquisar: TZQuery
+    Connection = DmConexao.sqlConexao
+    SQL.Strings = (
+      'select '
+      'c.id, c.nome, '
+      'c.telefone, '
+      'cid.nome as cidade '
+      'from cliente c '
+      'left join cidade cid '
+      'on (c.id_cidade = cid.id) where c.nome like :nome'
+    )
+    Params = <    
+      item
+        DataType = ftString
+        Name = 'nome'
+        ParamType = ptInput
+      end>
+    left = 72
+    top = 16
+    ParamData = <    
+      item
+        DataType = ftString
+        Name = 'nome'
+        ParamType = ptInput
+      end>
+    object sqlPesquisarid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object sqlPesquisarnome: TStringField
+      FieldKind = fkData
+      FieldName = 'nome'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 320
+    end
+    object sqlPesquisartelefone: TStringField
+      FieldKind = fkData
+      FieldName = 'telefone'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object sqlPesquisarcidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 320
+    end
+  end
+  object sqlInserir: TZQuery
+    Connection = DmConexao.sqlConexao
+    SQL.Strings = (
+      'insert into CLIENTE '
+      '(ID, ID_CIDADE, NOME, CPF, RG, TELEFONE) '
+      'values (:ID, :ID_CIDADE, :NOME, :CPF, :RG, :TELEFONE)'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftInteger
+        Name = 'ID_CIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'NOME'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'CPF'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'RG'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'TELEFONE'
+        ParamType = ptUnknown
+      end>
+    left = 73
+    top = 76
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftInteger
+        Name = 'ID_CIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'NOME'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'CPF'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'RG'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'TELEFONE'
+        ParamType = ptUnknown
+      end>
+  end
+  object sqlAlterar: TZQuery
+    Connection = DmConexao.sqlConexao
+    SQL.Strings = (
+      'update CLIENTE set '
+      'ID_CIDADE = :ID_CIDADE, '
+      'NOME = :NOME, '
+      'CPF = :CPF, '
+      'RG = :RG, '
+      'TELEFONE = :TELEFONE, '
+      'where (ID = :ID)'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'ID_CIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'NOME'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'CPF'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'RG'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'TELEFONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    left = 72
+    top = 132
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'ID_CIDADE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'NOME'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'CPF'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'RG'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftString
+        Name = 'TELEFONE'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+  end
+  object sqlExcluir: TZQuery
+    Connection = DmConexao.sqlConexao
+    SQL.Strings = (
+      'delete from CLIENTE where (ID = :ID)'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+    left = 72
+    top = 188
+    ParamData = <    
+      item
+        DataType = ftInteger
+        Name = 'ID'
+        ParamType = ptUnknown
+      end>
+  end
+end

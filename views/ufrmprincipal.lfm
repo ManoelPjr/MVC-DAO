@@ -1,0 +1,20 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 323
+  Height = 282
+  Top = 157
+  Width = 452
+  Caption = 'Exemplo MVC-DAO'
+  ClientHeight = 282
+  ClientWidth = 452
+  Color = 11391740
+  Position = poScreenCenter
+  LCLVersion = '2.0.6.0'
+  object Button1: TButton
+    Left = 16
+    Height = 60
+    Top = 8
+    Width = 70
+    Caption = 'Cliente'
+    TabOrder = 0
+  end
+end
