@@ -18,9 +18,7 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TfrmCadastrarCliente, frmCadastrarCliente);
   Application.CreateForm(TDmConexao, DmConexao);
-  Application.CreateForm(TDmCliente, DmCliente);
   Application.Run;
 end.
 
