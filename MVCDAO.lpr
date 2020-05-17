@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, zcomponent, uFrmPrincipal, uClienteModel, uFrmCadastrarCliente,
-  uDmConexao, uDmCliente
+  uDmConexao, uDmCliente, uClienteController
   { you can add units after this };
 
 {$R *.res}

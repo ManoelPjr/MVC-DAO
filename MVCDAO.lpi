@@ -36,7 +36,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="MVCDAO.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -78,6 +78,11 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uDmCliente"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="controllers/uclientecontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uClienteController"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -87,7 +92,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="views;models;dao"/>
+      <OtherUnitFiles Value="views;models;dao;controllers"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
