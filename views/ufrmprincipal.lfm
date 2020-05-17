@@ -15,6 +15,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 8
     Width = 70
     Caption = 'Cliente'
+    OnClick = Button1Click
     TabOrder = 0
   end
 end

@@ -5,7 +5,8 @@ unit uFrmPrincipal;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  uFrmCadastrarCliente;
 
 type
 
@@ -13,6 +14,7 @@ type
 
   TfrmPrincipal = class(TForm)
     Button1: TButton;
+    procedure Button1Click(Sender: TObject);
   private
 
   public
@@ -25,6 +27,18 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TfrmPrincipal }
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+begin
+  frmCadastrarCliente:= TfrmCadastrarCliente.Create(nil);
+  try
+    frmCadastrarCliente.ShowModal;
+  finally
+    FreeAndNil(frmCadastrarCliente);
+  end;
+end;
 
 end.
 

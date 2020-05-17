@@ -35,9 +35,9 @@ object frmCadastrarCliente: TfrmCadastrarCliente
     Height = 386
     Top = 0
     Width = 612
-    ActivePage = tbDados
+    ActivePage = tbPesq
     Align = alClient
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 1
     object tbPesq: TTabSheet
       Caption = 'tbPesq'
@@ -113,13 +113,14 @@ object frmCadastrarCliente: TfrmCadastrarCliente
           TabOrder = 2
         end
       end
-      object StringGrid1: TStringGrid
+      object strGridPesq: TStringGrid
         Left = 0
         Height = 243
         Top = 62
         Width = 608
         Align = alClient
         TabOrder = 2
+        OnSelectCell = strGridPesqSelectCell
       end
     end
     object tbDados: TTabSheet
