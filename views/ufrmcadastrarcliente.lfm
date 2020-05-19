@@ -7,6 +7,8 @@ object frmCadastrarCliente: TfrmCadastrarCliente
   ClientHeight = 436
   ClientWidth = 612
   KeyPreview = True
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
   Position = poMainFormCenter
   LCLVersion = '2.0.6.0'
   object pnlRodape: TPanel
@@ -61,7 +63,8 @@ object frmCadastrarCliente: TfrmCadastrarCliente
           Top = 25
           Width = 75
           Caption = 'Pesquisar'
-          TabOrder = 0
+          OnClick = btnPesquisarClick
+          TabOrder = 1
         end
         object edtPesq: TLabeledEdit
           Left = 10
@@ -72,7 +75,7 @@ object frmCadastrarCliente: TfrmCadastrarCliente
           EditLabel.Width = 415
           EditLabel.Caption = 'Digite para pesquisar'
           EditLabel.ParentColor = False
-          TabOrder = 1
+          TabOrder = 0
           Text = 'edtPesq'
         end
       end
@@ -91,25 +94,28 @@ object frmCadastrarCliente: TfrmCadastrarCliente
         object btnNovo: TButton
           Left = 359
           Height = 25
-          Top = 22
+          Top = 16
           Width = 75
           Caption = 'Novo'
+          OnClick = btnNovoClick
           TabOrder = 0
         end
         object btnDetalhar: TButton
           Left = 441
           Height = 25
-          Top = 25
+          Top = 16
           Width = 75
           Caption = 'Detalhar'
+          OnClick = btnDetalharClick
           TabOrder = 1
         end
         object btnExcluir: TButton
           Left = 524
           Height = 25
-          Top = 27
+          Top = 16
           Width = 75
           Caption = 'Excluir'
+          OnClick = btnExcluirClick
           TabOrder = 2
         end
       end
@@ -120,6 +126,8 @@ object frmCadastrarCliente: TfrmCadastrarCliente
         Width = 608
         Align = alClient
         TabOrder = 2
+        OnDblClick = strGridPesqDblClick
+        OnDrawCell = strGridPesqDrawCell
         OnSelectCell = strGridPesqSelectCell
       end
     end
@@ -145,6 +153,7 @@ object frmCadastrarCliente: TfrmCadastrarCliente
           Top = 14
           Width = 75
           Caption = 'Listar'
+          OnClick = btnListarClick
           TabOrder = 0
         end
         object btnAlterar: TButton
@@ -153,6 +162,7 @@ object frmCadastrarCliente: TfrmCadastrarCliente
           Top = 14
           Width = 75
           Caption = 'Alterar'
+          OnClick = btnAlterarClick
           TabOrder = 1
         end
         object btnGravar: TButton
@@ -161,6 +171,7 @@ object frmCadastrarCliente: TfrmCadastrarCliente
           Top = 14
           Width = 75
           Caption = 'Gravar'
+          OnClick = btnGravarClick
           TabOrder = 2
         end
         object btnCancelar: TButton
@@ -169,6 +180,7 @@ object frmCadastrarCliente: TfrmCadastrarCliente
           Top = 14
           Width = 75
           Caption = 'Cancelar'
+          OnClick = btnCancelarClick
           TabOrder = 3
         end
       end

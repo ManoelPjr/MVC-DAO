@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, ComCtrls,
-  StdCtrls, Grids, uClienteController, uClienteModel;
+  StdCtrls, Grids, uClienteController, uClienteModel, Types;
 
 type
   TOperacao = (opNovo, opAlterar, opNavegacao);
@@ -39,6 +39,19 @@ type
     strGridPesq: TStringGrid;
     tbPesq: TTabSheet;
     tbDados: TTabSheet;
+    procedure btnAlterarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnDetalharClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+    procedure btnListarClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnPesquisarClick(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: char);
+    procedure FormShow(Sender: TObject);
+    procedure strGridPesqDblClick(Sender: TObject);
+    procedure strGridPesqDrawCell(Sender: TObject; aCol, aRow: Integer;
+      aRect: TRect; aState: TGridDrawState);
     procedure strGridPesqSelectCell(Sender: TObject; aCol, aRow: Integer;
       var CanSelect: Boolean);
   private
@@ -71,13 +84,90 @@ implementation
 procedure TfrmCadastrarCliente.strGridPesqSelectCell(Sender: TObject; aCol,
   aRow: Integer; var CanSelect: Boolean);
 begin
-  if aRow > 0 then
-    IdSelecionado:=StrToInt(strGridPesq.Cells[0,aRow]);
+  if aRow > 1 then
+    IdSelecionado:= StrToInt(strGridPesq.Cells[0,aRow]);
+end;
+
+procedure TfrmCadastrarCliente.strGridPesqDrawCell(Sender: TObject; aCol,
+  aRow: Integer; aRect: TRect; aState: TGridDrawState);
+begin
+  with strGridPesq do
+  begin
+  Canvas.Brush.Color:= clGray;
+  Canvas.Font.Color:= $00DADD2FC;
+  Canvas.Font.Style:=[fsBold];
+  Canvas.FillRect(aRect);
+  //Canvas.TextOut(Rect.Left+2, Rect.Top+2, Cells[0,0]);
+  //Canvas.TextOut(Rect.Left, Rect.Top, Cells[ACol,ARow]);
+  end;
+end;
+
+procedure TfrmCadastrarCliente.strGridPesqDblClick(Sender: TObject);
+begin
+  Detalhar;
+end;
+
+procedure TfrmCadastrarCliente.FormShow(Sender: TObject);
+begin
+  SetUp;
+end;
+
+procedure TfrmCadastrarCliente.FormKeyPress(Sender: TObject; var Key: char);
+begin
+  if Key = #13 then
+    begin
+      Key:= #0;
+      //Perform(WM_NEXTDLGCTL,0,0); Delphi
+      SelectNext(ActiveControl,True,True); //Lazarus
+    end;
+end;
+
+procedure TfrmCadastrarCliente.btnPesquisarClick(Sender: TObject);
+begin
+  Pesquisar;
+end;
+
+procedure TfrmCadastrarCliente.btnNovoClick(Sender: TObject);
+begin
+  Novo;
+  HabilitarControles(opNovo);
+end;
+
+procedure TfrmCadastrarCliente.btnDetalharClick(Sender: TObject);
+begin
+  Detalhar;
+end;
+
+procedure TfrmCadastrarCliente.btnAlterarClick(Sender: TObject);
+begin
+  FOperacao:= opAlterar;
+  HabilitarControles(opAlterar);
+end;
+
+procedure TfrmCadastrarCliente.btnCancelarClick(Sender: TObject);
+begin
+  HabilitarControles(opNavegacao);
+end;
+
+procedure TfrmCadastrarCliente.btnExcluirClick(Sender: TObject);
+begin
+  Excluir;
+end;
+
+procedure TfrmCadastrarCliente.btnGravarClick(Sender: TObject);
+begin
+  Gravar;
+  HabilitarControles(opNavegacao);
+end;
+
+procedure TfrmCadastrarCliente.btnListarClick(Sender: TObject);
+begin
+  Listar;
 end;
 
 procedure TfrmCadastrarCliente.SetUp;
 begin
-  tbPesq.TabVisible := False;
+  tbPesq.TabVisible := True;//False;
   tbDados.TabVisible := False;
   pgcPrincipal.ActivePage := tbPesq;
   FIdSelecionado := 1;
